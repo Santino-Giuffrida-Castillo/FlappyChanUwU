@@ -30,6 +30,9 @@
     <ClInclude Include="src\screens.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="backgrpund.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\player.cpp">
@@ -45,6 +48,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\obstacle.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="background.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

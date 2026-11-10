@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="backgrpund.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\obstacle.h" />
     <ClInclude Include="src\parallax.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="src\screens.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="background.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\obstacle.cpp" />

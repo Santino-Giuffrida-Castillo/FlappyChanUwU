@@ -100,7 +100,7 @@ void drawScreens(Player player, int screenWidth, int screenHeight,Obstacle obsta
 	else if (actualScreen == LOSE)
 	{
 		DrawText("puntaje", screenWidth / 8, static_cast <int>(screenHeight * 0.3), 50, WHITE);
-		DrawText("R para reintentar", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
+		DrawText("R para reintentar", screenWidth / 8, static_cast <int>(screenHeight *  0.4), 40, WHITE);
 		DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 40, WHITE);
 	}
 }
