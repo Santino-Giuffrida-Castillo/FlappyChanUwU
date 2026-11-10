@@ -1,6 +1,7 @@
 #pragma once
 #include "player.h"
 #include "obstacle.h"
+#include "background.h"
 
 enum GameScreen
 {
@@ -12,5 +13,8 @@ enum GameScreen
 	LOSE 
 };
 
-void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen);
-void drawScreens(Player player, int screenWidth, int screenHeight, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen);
+const int screenWidth = 1080;
+const int screenHeight = 720;
+
+void updateScreens(Player& player ,Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, ParallaxBackground& backGround);
+void drawScreens(Player player, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen, ParallaxBackground& backGround);

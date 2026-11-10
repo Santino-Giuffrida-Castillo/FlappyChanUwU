@@ -12,3 +12,6 @@ struct ParallaxBackground
     float scrollingMid;
     float scrollingFore;
 };
+void updateParallax(ParallaxBackground& backGround);
+void drawParallax(ParallaxBackground& backGround);
+void unloadBackground(ParallaxBackground& backGround);

@@ -2,13 +2,13 @@
 #include "game.h"
 #include <raylib.h>
 
-void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen)
+void updateScreens(Player& player, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, ParallaxBackground& backGround)
 {
 	if (actualScreen == MENU)
 	{
 		if (IsKeyPressed(KEY_ONE))
 		{
-			startGame(player, screenWidth, screenHeight, obstacle, obstacle2);
+			startGame(player, obstacle, obstacle2, backGround);
 			actualScreen = PLAY;
 		}
 		if (IsKeyPressed(KEY_TWO))
@@ -47,7 +47,7 @@ void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& 
 		if (IsKeyPressed(KEY_R))
 		{
 			actualScreen = PLAY;
-			startGame(player, screenWidth, screenHeight, obstacle, obstacle2);
+			startGame(player, obstacle, obstacle2, backGround);
 		}
 	}
 	//actualizacion
@@ -55,14 +55,16 @@ void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& 
 	{
 		playerMovement(player, screenHeight);
 		obstacleMovement(obstacle, obstacle2, screenWidth, screenHeight);
-		loseConditions(obstacle, obstacle2, player, screenHeight, actualScreen);
+		loseConditions(obstacle, obstacle2, player, actualScreen);
+		updateParallax(backGround);
+
 		if (IsKeyPressed(KEY_ESCAPE))
 		{
 			actualScreen = MENU;
 		}
 	}
 }
-void drawScreens(Player player, int screenWidth, int screenHeight,Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen)
+void drawScreens(Player player,Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen, ParallaxBackground& backGround)
 {
 
 	if (actualScreen == MENU)
@@ -75,6 +77,7 @@ void drawScreens(Player player, int screenWidth, int screenHeight,Obstacle obsta
 	}
 	else if (actualScreen == PLAY)
 	{
+		drawParallax(backGround);
 		//jugador
 		DrawRectangle(static_cast<int>(player.positionX), static_cast<int>(player.positionY), static_cast<int>(player.rectangleSize), static_cast<int>(player.rectangleSize), PURPLE);
 
@@ -83,6 +86,8 @@ void drawScreens(Player player, int screenWidth, int screenHeight,Obstacle obsta
 
 		//obstáculo inferior
 		DrawRectangle(static_cast<int>(obstacle2.positionX), static_cast<int>(obstacle2.positionY), static_cast<int>(obstacle2.sizeX), static_cast<int>(obstacle2.sizeY), WHITE);
+
+		
 	}
 	else if (actualScreen == CREDITS)
 	{

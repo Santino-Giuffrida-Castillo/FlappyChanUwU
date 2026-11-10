@@ -2,7 +2,7 @@
 #include <iostream>
 #include <raylib.h>
 
-void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player& player, const int screenHeight, GameScreen& actualScreen)
+void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player& player, GameScreen& actualScreen)
 {
 	//colisiones
 	if (colisionCheck(obstacle, obstacle2, player))
@@ -22,7 +22,7 @@ void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player&
 }
 
 
-void startGame(Player& player, int screenWidth, int screenHeight, Obstacle& obstacle, Obstacle& obstacle2)
+void startGame(Player& player, Obstacle& obstacle, Obstacle& obstacle2, ParallaxBackground& backGround)
 {
 	float margin = screenWidth * 0.05f;
 
@@ -35,16 +35,17 @@ void startGame(Player& player, int screenWidth, int screenHeight, Obstacle& obst
 	player.gravity = 300;
 	player.flappForce = -200;
 
+	backGround.back = LoadTexture("res/back.png");
+	backGround.mid = LoadTexture("res/middle.png");
+	backGround.front = LoadTexture("res/front.png");
 	startObstacle(obstacle, obstacle2, screenWidth, screenHeight);
 
 }
 
 void run()
 {
-	srand( static_cast<unsigned int>( time(0) ) );
+	srand(static_cast<unsigned int>(time(0)));
 
-	const int screenWidth = 1080;
-	const int screenHeight = 720;
 
 	InitWindow(screenWidth, screenHeight, "Flappy Chan UwU");
 	SetExitKey(KEY_NULL);
@@ -53,22 +54,23 @@ void run()
 	Obstacle obstacle;
 	Obstacle obstacle2;
 	GameScreen actualScreen = MENU;
+	ParallaxBackground backGround;
 
-	startGame(player, screenWidth, screenHeight, obstacle, obstacle2);
+	startGame(player, obstacle, obstacle2, backGround);
 
 	while (!WindowShouldClose() && actualScreen != EXIT)
 	{
-		updateScreens(player, screenWidth, screenHeight, obstacle, obstacle2, actualScreen);
+		updateScreens(player, obstacle, obstacle2, actualScreen, backGround);
 		//dibujado
 
 		BeginDrawing();
 
 		ClearBackground(BLACK);
 
-		drawScreens(player, screenWidth, screenHeight, obstacle, obstacle2, actualScreen);
+		drawScreens(player, obstacle, obstacle2, actualScreen, backGround);
 
 		//version
-		DrawText("V0.2", 0, 0, 20, WHITE);
+		DrawText("V0.3", 0, 0, 20, WHITE);
 
 		EndDrawing();
 	}
