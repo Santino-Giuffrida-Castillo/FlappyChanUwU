@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\obstacle.h" />
+    <ClInclude Include="src\parallax.h" />
+    <ClInclude Include="src\player.h" />
+    <ClInclude Include="src\screens.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\obstacle.cpp" />
+    <ClCompile Include="src\player.cpp" />
+    <ClCompile Include="src\screens.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
