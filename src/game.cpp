@@ -2,7 +2,7 @@
 #include <iostream>
 #include <raylib.h>
 
-void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player& player, bool& isRunning, const int screenHeight, GameScreen& actualScreen)
+void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player& player, const int screenHeight, GameScreen& actualScreen)
 {
 	//colisiones
 	if (colisionCheck(obstacle, obstacle2, player))
@@ -41,12 +41,11 @@ void startGame(Player& player, int screenWidth, int screenHeight, Obstacle& obst
 
 void run()
 {
-	srand(time(0));
+	srand( static_cast<unsigned int>( time(0) ) );
 
 	const int screenWidth = 1080;
 	const int screenHeight = 720;
 
-	bool isRunning = true;
 	InitWindow(screenWidth, screenHeight, "Flappy Chan UwU");
 	SetExitKey(KEY_NULL);
 
@@ -55,13 +54,11 @@ void run()
 	Obstacle obstacle2;
 	GameScreen actualScreen = MENU;
 
-	int selector;
-
 	startGame(player, screenWidth, screenHeight, obstacle, obstacle2);
 
 	while (!WindowShouldClose() && actualScreen != EXIT)
 	{
-		updateScreens(player, screenWidth, screenHeight, obstacle, obstacle2, actualScreen, isRunning);
+		updateScreens(player, screenWidth, screenHeight, obstacle, obstacle2, actualScreen);
 		//dibujado
 
 		BeginDrawing();

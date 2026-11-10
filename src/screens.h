@@ -12,5 +12,5 @@ enum GameScreen
 	LOSE 
 };
 
-void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, bool isRunning);
+void updateScreens(Player& player, int screenWidth, int screenHeight, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen);
 void drawScreens(Player player, int screenWidth, int screenHeight, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen);
