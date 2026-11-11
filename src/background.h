@@ -2,16 +2,20 @@
 
 #include <raylib.h>
 
-struct ParallaxBackground
+namespace flappyBird
 {
-    Texture2D back;
-    Texture2D mid;
-    Texture2D front;
+    struct ParallaxBackground
+    {
+        Texture2D back;
+        Texture2D mid;
+        Texture2D front;
 
-    float scrollingBack;
-    float scrollingMid;
-    float scrollingFore;
-};
-void updateParallax(ParallaxBackground& backGround);
-void drawParallax(ParallaxBackground& backGround);
-void unloadBackground(ParallaxBackground& backGround);
+        float scrollingBack;
+        float scrollingMid;
+        float scrollingFore;
+    };
+
+    void updateParallax(ParallaxBackground& backGround);
+    void drawParallax(ParallaxBackground& backGround);
+    void unloadBackground(ParallaxBackground& backGround);
+}
