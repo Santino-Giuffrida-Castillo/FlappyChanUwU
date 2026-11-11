@@ -4,8 +4,10 @@
 
 namespace flappyBird
 {
+
 	void startObstacle(Obstacle& obstacle, Obstacle& obstacle2, int screenWidth, int screenHeight)
 	{
+
 		//obstáculo superior
 		obstacle.sizeX = 50;
 		obstacle.sizeY = static_cast<float>(rand() % (screenHeight / 2) + (screenHeight / 8));
@@ -19,6 +21,7 @@ namespace flappyBird
 		obstacle2.positionY = obstacle.sizeY + 300;//para ej juego final dejar en 150 o 200, y hacer una variable a parte
 		obstacle2.sizeY = screenHeight - obstacle2.positionY;
 		obstacle2.speedX = obstacle.speedX;
+
 	}
 
 	void obstacleMovement(Obstacle& obstacle, Obstacle& obstacle2, const int screenWidth, const int screenHeight)
@@ -36,6 +39,7 @@ namespace flappyBird
 			obstacle2.sizeY = screenHeight - obstacle2.positionY;
 			std::cout << obstacle.sizeY;
 		}
+
 	}
 
 	bool colisionCheck(Obstacle obstacle, Obstacle obstacle2, Player player)
@@ -54,5 +58,7 @@ namespace flappyBird
 
 		//Si choca con cualquiera de los dos, devuelve true
 		return (colisionX1 && colisionY1) || (colisionX2 && colisionY2);
+
 	}
+
 }

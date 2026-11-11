@@ -3,8 +3,10 @@
 
 namespace flappyBird
 {
+
 	void player1Movement(Player& player)
 	{
+
 		if (IsKeyPressed(KEY_W))
 		{
 			player.speedY = player.flappForce;
@@ -17,9 +19,11 @@ namespace flappyBird
 			player.positionY = 0;
 			player.speedY = 0;
 		}
+
 	}
 	void player2Movement(Player& player)
 	{
+
 		if (IsKeyPressed(KEY_SPACE))
 		{
 			player.speedY = player.flappForce;
@@ -32,5 +36,7 @@ namespace flappyBird
 			player.positionY = 0;
 			player.speedY = 0;
 		}
+
 	}
+
 }

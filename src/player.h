@@ -1,8 +1,11 @@
 #pragma once
+
 namespace flappyBird
 {
+
 	struct Player
 	{
+
 		float positionX;
 		float positionY;
 		int points;
@@ -13,6 +16,8 @@ namespace flappyBird
 		bool isActive;
 
 	};
+
 	void player1Movement(Player& player);
 	void player2Movement(Player& player);
+
 }

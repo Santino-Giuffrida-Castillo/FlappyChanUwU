@@ -1,9 +1,12 @@
 #include "background.h"
 #include "screens.h"
+
 namespace flappyBird
 {
+
 	void updateParallax(ParallaxBackground& backGround)
 	{
+
 		backGround.scrollingBack -= 40.0f * GetFrameTime();
 		backGround.scrollingMid -= 120.0f * GetFrameTime();
 		backGround.scrollingFore -= 250.0f * GetFrameTime();
@@ -22,10 +25,12 @@ namespace flappyBird
 		{
 			backGround.scrollingFore = 0.0f;
 		}
+
 	}
 
 	void drawParallax(ParallaxBackground& backGround)
 	{
+
 		float scale = (float)screenHeight / backGround.back.height;
 
 		float scaledWidthBack = backGround.back.width * scale;
@@ -42,12 +47,15 @@ namespace flappyBird
 
 		DrawTextureEx(backGround.front, Vector2{ backGround.scrollingFore, 0.0f }, 0.0f, scale, WHITE);
 		DrawTextureEx(backGround.front, Vector2{ scaledWidthFore + backGround.scrollingFore, 0.0f }, 0.0f, scale, WHITE);
+
 	}
 
 	void unloadBackground(ParallaxBackground& backGround)
 	{
+
 		UnloadTexture(backGround.back);
 		UnloadTexture(backGround.mid);
 		UnloadTexture(backGround.front);
+
 	}
 }

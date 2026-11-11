@@ -4,8 +4,10 @@
 
 namespace flappyBird
 {
+
     struct ParallaxBackground
     {
+
         Texture2D back;
         Texture2D mid;
         Texture2D front;
@@ -13,9 +15,12 @@ namespace flappyBird
         float scrollingBack;
         float scrollingMid;
         float scrollingFore;
+
     };
+
 
     void updateParallax(ParallaxBackground& backGround);
     void drawParallax(ParallaxBackground& backGround);
     void unloadBackground(ParallaxBackground& backGround);
+
 }

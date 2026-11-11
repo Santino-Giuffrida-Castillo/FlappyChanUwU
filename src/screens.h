@@ -5,6 +5,7 @@
 
 namespace flappyBird
 {
+
 	enum GameScreen
 	{
 		MENU,
@@ -21,4 +22,5 @@ namespace flappyBird
 
 	void updateScreens(Player& player, Player& player2, Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, ParallaxBackground& backGround);
 	void drawScreens(Player player1, Player player2, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen, ParallaxBackground& backGround);
+
 }

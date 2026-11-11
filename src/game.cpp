@@ -4,6 +4,7 @@
 
 namespace flappyBird
 {
+
 	void loseConditions(const Obstacle& obstacle, const Obstacle& obstacle2, Player& player, GameScreen& actualScreen)
 	{
 		//colisiones
@@ -26,6 +27,7 @@ namespace flappyBird
 
 	void startGame(Player& player1, Player& player2, Obstacle& obstacle, Obstacle& obstacle2, ParallaxBackground& backGround)
 	{
+
 		float margin = screenWidth * 0.05f;
 
 		player1.positionX = margin;
@@ -55,6 +57,7 @@ namespace flappyBird
 
 	void run()
 	{
+
 		srand(static_cast<unsigned int>(time(0)));
 
 
@@ -74,6 +77,7 @@ namespace flappyBird
 
 		while (!WindowShouldClose() && actualScreen != EXIT)
 		{
+
 			updateScreens(player1, player2, obstacle, obstacle2, actualScreen, backGround);
 			//dibujado
 
@@ -87,7 +91,10 @@ namespace flappyBird
 			DrawText("V0.3", 0, 0, 20, WHITE);
 
 			EndDrawing();
+
 		}
+
 		CloseWindow();
+
 	}
 }
