@@ -1,6 +1,9 @@
 #include "screens.h"
-#include "game.h"
+
 #include "raylib.h"
+
+#include "game.h"
+
 
 namespace flappyBird
 {
@@ -144,9 +147,10 @@ namespace flappyBird
 		else if (actualScreen == CREDITS)
 		{
 
-			DrawText("DESARROLLADOR", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 50, WHITE);
-			DrawText("Manaos_ChanUwU", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 70, VIOLET);
-			DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.65), 40, WHITE);
+			DrawText("DESARROLLADOR/ES", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
+			DrawText("Desarrollador anterior:Manaos_ChanUwU", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 30, VIOLET);
+			DrawText("Desarrollador actual:Santino Giuffrida Castillo", screenWidth / 8, static_cast <int>(screenHeight * 0.6), 30, VIOLET);
+			DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.75), 40, WHITE);
 
 		}
 		else if (actualScreen == TUTORIAL)
