@@ -159,7 +159,7 @@
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>cd "$(SolutionDir)scripts"
-copyRes "$(ProjectDir)res" "$(OutDir)"</Command>
+copyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -190,7 +190,7 @@ copyRes "$(ProjectDir)res" "$(OutDir)"</Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>cd "$(SolutionDir)scripts"
-copyRes "$(ProjectDir)res" "$(OutDir)"</Command>
+copyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

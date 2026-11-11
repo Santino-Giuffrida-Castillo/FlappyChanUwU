@@ -1,34 +1,36 @@
 #include "player.h"
 #include <raylib.h>
 
-
-void player1Movement(Player& player)
+namespace flappyBird
 {
-	if (IsKeyPressed(KEY_W))
+	void player1Movement(Player& player)
 	{
-		player.speedY = player.flappForce;
+		if (IsKeyPressed(KEY_W))
+		{
+			player.speedY = player.flappForce;
+		}
+		player.speedY += player.gravity * GetFrameTime();
+		player.positionY += player.speedY * GetFrameTime();
+		//techo
+		if (player.positionY < 0)
+		{
+			player.positionY = 0;
+			player.speedY = 0;
+		}
 	}
-	player.speedY += player.gravity * GetFrameTime();
-	player.positionY += player.speedY * GetFrameTime();
-	//techo
-	if (player.positionY < 0)
+	void player2Movement(Player& player)
 	{
-		player.positionY = 0;
-		player.speedY = 0;
-	}
-}
-void player2Movement(Player& player)
-{
-	if (IsKeyPressed(KEY_SPACE))
-	{
-		player.speedY = player.flappForce;
-	}
-	player.speedY += player.gravity * GetFrameTime();
-	player.positionY += player.speedY * GetFrameTime();
-	//techo
-	if (player.positionY < 0)
-	{
-		player.positionY = 0;
-		player.speedY = 0;
+		if (IsKeyPressed(KEY_SPACE))
+		{
+			player.speedY = player.flappForce;
+		}
+		player.speedY += player.gravity * GetFrameTime();
+		player.positionY += player.speedY * GetFrameTime();
+		//techo
+		if (player.positionY < 0)
+		{
+			player.positionY = 0;
+			player.speedY = 0;
+		}
 	}
 }
