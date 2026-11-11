@@ -156,9 +156,9 @@ namespace flappyBird
 		else if (actualScreen == TUTORIAL)
 		{
 
-			DrawText("W para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
+			DrawText("JUGADOR1:W para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
+			DrawText("JUGADOR2:ESPACIO para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.45), 40, WHITE);
 			DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 40, WHITE);
-			DrawText("(aca tambien funciona)", screenWidth / 8, static_cast <int>(screenHeight * 0.55), 30, WHITE);
 			DrawText("Q para pausa", screenWidth / 8, static_cast <int>(screenHeight * 0.6), 40, WHITE);
 
 		}
