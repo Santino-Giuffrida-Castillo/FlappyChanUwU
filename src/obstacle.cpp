@@ -1,6 +1,8 @@
 #include "obstacle.h"
+
 #include <iostream>
-#include <raylib.h>
+
+#include "raylib.h"
 
 namespace flappyBird
 {

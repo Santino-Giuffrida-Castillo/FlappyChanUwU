@@ -1,6 +1,8 @@
 #include "game.h"
+
 #include <iostream>
-#include <raylib.h>
+
+#include "raylib.h"
 
 namespace flappyBird
 {
