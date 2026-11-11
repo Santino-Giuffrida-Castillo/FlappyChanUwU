@@ -8,7 +8,8 @@ enum GameScreen
 	MENU, 
 	PLAY, 
 	CREDITS, 
-	TUTORIAL, 
+	TUTORIAL,
+	OPTIONS,
 	EXIT, 
 	LOSE 
 };
@@ -16,5 +17,5 @@ enum GameScreen
 const int screenWidth = 1080;
 const int screenHeight = 720;
 
-void updateScreens(Player& player ,Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, ParallaxBackground& backGround);
-void drawScreens(Player player, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen, ParallaxBackground& backGround);
+void updateScreens(Player& player, Player& player2,Obstacle& obstacle, Obstacle& obstacle2, GameScreen& actualScreen, ParallaxBackground& backGround);
+void drawScreens(Player player1, Player player2, Obstacle obstacle, Obstacle obstacle2, GameScreen actualScreen, ParallaxBackground& backGround);

@@ -8,5 +8,8 @@ struct Player
 	float speedY;
 	float flappForce;
 	float gravity;
+	bool isActive;
+
 };
-void playerMovement(Player& player, const int screenHeight);
+void player1Movement(Player& player);
+void player2Movement(Player& player);

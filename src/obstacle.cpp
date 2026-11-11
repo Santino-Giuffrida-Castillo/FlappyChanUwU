@@ -6,8 +6,8 @@ void startObstacle(Obstacle& obstacle, Obstacle& obstacle2, int screenWidth, int
 {
 	//obstáculo superior
 	obstacle.sizeX = 50;
-	obstacle.sizeY = rand() % (screenHeight / 2) + (screenHeight / 8);
-	obstacle.positionX = screenWidth;
+	obstacle.sizeY = static_cast<float>( rand() % (screenHeight / 2) + (screenHeight / 8) );
+	obstacle.positionX = static_cast<float>(screenWidth);
 	obstacle.positionY = 0;
 	obstacle.speedX = 150;
 
@@ -28,8 +28,8 @@ void obstacleMovement(Obstacle& obstacle, Obstacle& obstacle2, const int screenW
 	obstacle2.positionX = obstacle.positionX;
 	if (obstacle.positionX + obstacle.sizeX < 0)
 	{
-		obstacle.positionX = screenWidth;
-		obstacle.sizeY = rand() % (screenHeight / 2) + (screenHeight / 8);
+		obstacle.positionX = static_cast<float>(screenWidth);
+		obstacle.sizeY = static_cast<float>( rand() % (screenHeight / 2) + (screenHeight / 8) );
 		obstacle2.positionY = obstacle.sizeY + 300;//para ej juego final dejar en 150 o 200
 		obstacle2.sizeY = screenHeight - obstacle2.positionY;
 		std::cout << obstacle.sizeY;
