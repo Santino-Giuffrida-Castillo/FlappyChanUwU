@@ -74,7 +74,7 @@ namespace flappyBird
 		Obstacle obstacle2;
 		GameScreen actualScreen = MENU;
 		ParallaxBackground backGround;
-
+		loadPlayerAssets();
 		startGame(player1, player2, obstacle, obstacle2, backGround);
 
 		while (!WindowShouldClose() && actualScreen != EXIT)
@@ -95,7 +95,7 @@ namespace flappyBird
 			EndDrawing();
 
 		}
-
+		unloadPlayerAssets();
 		CloseWindow();
 
 	}
