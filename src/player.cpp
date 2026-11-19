@@ -24,6 +24,13 @@ namespace flappyBird
 			player.positionY = 0;
 			player.speedY = 0;
 		}
+		player.origin = { player.rectangleSize / 2.0f, player.rectangleSize / 2.0f };
+		player.dest = {
+			player.positionX + player.origin.x,
+			player.positionY + player.origin.y,
+			player.rectangleSize,
+			player.rectangleSize
+		};
 
 	}
 	void player2Movement(Player& player)
@@ -41,6 +48,13 @@ namespace flappyBird
 			player.positionY = 0;
 			player.speedY = 0;
 		}
+		player.origin = { player.rectangleSize / 2.0f, player.rectangleSize / 2.0f };
+		player.dest = {
+			player.positionX + player.origin.x,
+			player.positionY + player.origin.y,
+			player.rectangleSize,
+			player.rectangleSize
+		};
 
 	}
 	void assignPlayerAssets(Player& player)

@@ -41,6 +41,22 @@ namespace flappyBird
 		player1.gravity = 300;
 		player1.flappForce = -200;
 
+		player1.dest = {
+	player1.positionX,
+	player1.positionY,
+	player1.rectangleSize,
+	player1.rectangleSize
+		};
+
+		player1.source = {
+	0.0f,
+	0.0f,
+	static_cast<float>(player1.texture.width),
+	static_cast<float>(player1.texture.height)
+		};
+
+		player1.origin = { 0.0f, 0.0f };
+
 		player2.positionX = margin + 50;
 		player2.rectangleSize = 50;
 		player2.positionY = (screenHeight / 2) - (player2.rectangleSize / 2);
@@ -49,6 +65,23 @@ namespace flappyBird
 		player2.speedY = 0;
 		player2.gravity = 300;
 		player2.flappForce = -200;
+
+		player2.dest = {
+player2.positionX,
+player2.positionY,
+player2.rectangleSize,
+player2.rectangleSize
+		};
+
+		player2.source = {
+	0.0f,
+	0.0f,
+	static_cast<float>(player2.texture.width),
+	static_cast<float>(player2.texture.height)
+		};
+		
+		player2.origin = { 0.0f, 0.0f };
+
 
 		backGround.back = LoadTexture("res/back.png");
 		backGround.mid = LoadTexture("res/middle.png");
@@ -64,6 +97,7 @@ namespace flappyBird
 
 
 		InitWindow(screenWidth, screenHeight, "Flappy Chan UwU");
+	
 		SetExitKey(KEY_NULL);
 
 		Player player1;
@@ -75,6 +109,8 @@ namespace flappyBird
 		GameScreen actualScreen = MENU;
 		ParallaxBackground backGround;
 		loadPlayerAssets();
+		assignPlayerAssets(player1);
+		assignPlayerAssets(player2);
 		startGame(player1, player2, obstacle, obstacle2, backGround);
 
 		while (!WindowShouldClose() && actualScreen != EXIT)

@@ -16,6 +16,7 @@ namespace flappyBird
 		obstacle.positionX = static_cast<float>(screenWidth);
 		obstacle.positionY = 0;
 		obstacle.speedX = 150;
+		obstacle.passed = false;
 
 		//obstáculo inferior
 		obstacle2.sizeX = 50;
@@ -39,7 +40,9 @@ namespace flappyBird
 			obstacle.sizeY = static_cast<float>(rand() % (screenHeight / 2) + (screenHeight / 8));
 			obstacle2.positionY = obstacle.sizeY + 300;//para ej juego final dejar en 150 o 200
 			obstacle2.sizeY = screenHeight - obstacle2.positionY;
+			obstacle.passed = false;
 			std::cout << obstacle.sizeY;
+
 		}
 
 	}
@@ -63,4 +66,17 @@ namespace flappyBird
 
 	}
 
+	void addPoints(Obstacle& obstacle, Player& player1, Player& player2)
+	{
+		if (!obstacle.passed && (obstacle.positionX + obstacle.sizeX < player1.positionX))
+		{
+			obstacle.passed = true;
+			player1.points++;
+
+			if (player2.isActive)
+			{
+				player2.points++;
+			}
+		}
+	}
 }

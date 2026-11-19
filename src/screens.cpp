@@ -93,6 +93,9 @@ namespace flappyBird
 		else if (actualScreen == PLAY)
 		{
 
+			obstacleMovement(obstacle, obstacle2, screenWidth, screenHeight);
+			addPoints(obstacle, player, player2);
+
 			if (player2.isActive)
 			{
 				player2Movement(player2);
@@ -128,13 +131,22 @@ namespace flappyBird
 		}
 		else if (actualScreen == PLAY)
 		{
-
+		
 			drawParallax(backGround);
-			//jugador
-			DrawRectangle(static_cast<int>(player1.positionX), static_cast<int>(player1.positionY), static_cast<int>(player1.rectangleSize), static_cast<int>(player1.rectangleSize), PURPLE);
+			DrawText("V1.0", 0, 0, 20, WHITE);
+			DrawText(TextFormat("P1 Puntos: %i", player1.points), 20, 20, 30, WHITE);
+
+	
 			if (player2.isActive)
 			{
-				DrawRectangle(static_cast<int>(player2.positionX), static_cast<int>(player2.positionY), static_cast<int>(player2.rectangleSize), static_cast<int>(player2.rectangleSize), PINK);
+				DrawText(TextFormat("P2 Puntos: %i", player2.points), screenWidth - 260, 20, 30, PINK);
+			}
+
+			//jugador
+			DrawTexturePro(player1.texture, player1.source, player1.dest, player1.origin, 0.0f, WHITE);
+			if (player2.isActive)
+			{
+				DrawTexturePro(player2.texture, player2.source, player2.dest, player2.origin, 0.0f, RED);
 			}
 			//obstáculo superior
 			DrawRectangle(static_cast<int>(obstacle.positionX), static_cast<int>(obstacle.positionY), static_cast<int>(obstacle.sizeX), static_cast<int>(obstacle.sizeY), WHITE);
@@ -157,9 +169,8 @@ namespace flappyBird
 		{
 
 			DrawText("JUGADOR1:W para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
-			DrawText("JUGADOR2:ESPACIO para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.45), 40, WHITE);
+			DrawText("JUGADOR2(Rojo):ESPACIO para saltar", screenWidth / 8, static_cast <int>(screenHeight * 0.45), 40, WHITE);
 			DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 40, WHITE);
-			DrawText("Q para pausa", screenWidth / 8, static_cast <int>(screenHeight * 0.6), 40, WHITE);
 
 		}
 		else if (actualScreen == OPTIONS)
@@ -179,8 +190,13 @@ namespace flappyBird
 		}
 		else if (actualScreen == LOSE)
 		{
+			int baseX = screenWidth / 8;
 
-			DrawText("puntaje", screenWidth / 8, static_cast <int>(screenHeight * 0.3), 50, WHITE);
+			DrawText(TextFormat("Puntaje P1: %i", player1.points), baseX, static_cast<int>(screenHeight * 0.25f), 45, WHITE);
+			if (player2.isActive)
+			{
+				DrawText(TextFormat("Puntaje P2: %i", player2.points), baseX, static_cast<int>(screenHeight * 0.35f), 45, PINK);
+			}
 			DrawText("R para reintentar", screenWidth / 8, static_cast <int>(screenHeight * 0.4), 40, WHITE);
 			DrawText("ESCAPE para volver al menu", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 40, WHITE);
 

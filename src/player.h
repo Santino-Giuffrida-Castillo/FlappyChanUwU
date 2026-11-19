@@ -19,6 +19,9 @@ namespace flappyBird
 		Texture2D texture;
 		Sound deadSound;
 		Sound jumpSound;
+		Rectangle dest;
+		Rectangle source;
+		Vector2 origin;
 		
 
 	};
