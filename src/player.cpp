@@ -71,6 +71,8 @@ namespace flappyBird
 		playerTexture = LoadTexture("res/player.png");
 		jumpSound = LoadSound("res/jump.wav");
 		deadSound = LoadSound("res/death.wav");
+
+		SetSoundVolume(jumpSound, 0.5f);
 	}
 
 	void unloadPlayerAssets()

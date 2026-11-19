@@ -14,12 +14,12 @@ namespace flappyBird
 		pointSound = LoadSound("res/point.wav");
 		menuMusic = LoadMusicStream("res/musicMenu.wav");
 		inGameMusic = LoadMusicStream("res/musicInGame.wav");
-		SetSoundVolume(initSound, 0.3f);
-		SetSoundVolume(clickSound, 0.3f);
-		SetSoundVolume(pointSound, 0.3f);
+		SetSoundVolume(initSound, 0.05f);
+		SetSoundVolume(clickSound, 0.1f);
+		SetSoundVolume(pointSound, 0.1f);
 
-		SetMusicVolume(menuMusic, 0.3f); 
-		SetMusicVolume(inGameMusic, 0.3f);
+		SetMusicVolume(menuMusic, 0.1f); 
+		SetMusicVolume(inGameMusic, 0.1f);
 	}
 
 	void unloadGameAudio()
