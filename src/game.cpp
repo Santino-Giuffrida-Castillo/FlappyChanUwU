@@ -125,8 +125,8 @@ player2.rectangleSize
 
 			drawScreens(player1, player2, obstacle, obstacle2, actualScreen, backGround);
 
-			//version
-			DrawText("V0.3", 0, 0, 20, WHITE);
+
+			
 
 			EndDrawing();
 
