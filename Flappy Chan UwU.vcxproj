@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="src\background.h" />
     <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\gameAudio.h" />
     <ClInclude Include="src\obstacle.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\screens.h" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <ClCompile Include="src\background.cpp" />
     <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\gameAudio.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\obstacle.cpp" />
     <ClCompile Include="src\player.cpp" />

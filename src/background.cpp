@@ -52,6 +52,13 @@ namespace flappyBird
 
 	}
 
+	void loadBackground(ParallaxBackground& backGround)
+	{
+		backGround.back = LoadTexture("res/back.png");
+		backGround.mid = LoadTexture("res/middle.png");
+		backGround.front = LoadTexture("res/front.png");
+	}
+
 	void unloadBackground(ParallaxBackground& backGround)
 	{
 

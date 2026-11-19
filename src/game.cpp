@@ -16,18 +16,22 @@ namespace flappyBird
 			//se pausa
 			//R para reiniciar
 			//ESC para volver al menu
+			PlaySound(player.deadSound);
+			playMenuMusic();
 			actualScreen = LOSE;
 		}
 		//piso
 		if (player.positionY > screenHeight)
 		{
 			std::cout << "Perdiste: tocaste el suelo" << std::endl;
+			PlaySound(player.deadSound);
+			playMenuMusic();
 			actualScreen = LOSE;
 		}
 	}
 
 
-	void startGame(Player& player1, Player& player2, Obstacle& obstacle, Obstacle& obstacle2, ParallaxBackground& backGround)
+	void startGame(Player& player1, Player& player2, Obstacle& obstacle, Obstacle& obstacle2)
 	{
 
 		float margin = screenWidth * 0.05f;
@@ -82,10 +86,8 @@ player2.rectangleSize
 		
 		player2.origin = { 0.0f, 0.0f };
 
+		playInitSound();
 
-		backGround.back = LoadTexture("res/back.png");
-		backGround.mid = LoadTexture("res/middle.png");
-		backGround.front = LoadTexture("res/front.png");
 		startObstacle(obstacle, obstacle2, screenWidth, screenHeight);
 
 	}
@@ -97,7 +99,8 @@ player2.rectangleSize
 
 
 		InitWindow(screenWidth, screenHeight, "Flappy Chan UwU");
-	
+		InitAudioDevice();
+		loadGameAudio();
 		SetExitKey(KEY_NULL);
 
 		Player player1;
@@ -108,14 +111,16 @@ player2.rectangleSize
 		Obstacle obstacle2;
 		GameScreen actualScreen = MENU;
 		ParallaxBackground backGround;
+		loadBackground(backGround);
 		loadPlayerAssets();
 		assignPlayerAssets(player1);
 		assignPlayerAssets(player2);
-		startGame(player1, player2, obstacle, obstacle2, backGround);
 
+		playMenuMusic();
 		while (!WindowShouldClose() && actualScreen != EXIT)
 		{
-
+			updateGameMusic(actualScreen == PLAY);
+			
 			updateScreens(player1, player2, obstacle, obstacle2, actualScreen, backGround);
 			//dibujado
 
@@ -131,8 +136,12 @@ player2.rectangleSize
 			EndDrawing();
 
 		}
+		unloadBackground(backGround);
 		unloadPlayerAssets();
+		unloadGameAudio();
+		CloseAudioDevice();
 		CloseWindow();
 
 	}
+
 }

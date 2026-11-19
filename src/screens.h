@@ -3,7 +3,7 @@
 #include "player.h"
 #include "obstacle.h"
 #include "background.h"
-
+#include "gameAudio.h"
 namespace flappyBird
 {
 

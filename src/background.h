@@ -21,6 +21,7 @@ namespace flappyBird
 
     void updateParallax(ParallaxBackground& backGround);
     void drawParallax(ParallaxBackground& backGround);
+    void loadBackground(ParallaxBackground& backGround);
     void unloadBackground(ParallaxBackground& backGround);
 
 }

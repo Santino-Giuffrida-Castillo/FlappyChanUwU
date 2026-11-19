@@ -1,6 +1,7 @@
 #pragma once
 
 #include "player.h"
+#include "gameAudio.h"
 
 namespace flappyBird
 {

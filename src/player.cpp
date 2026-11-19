@@ -14,6 +14,7 @@ namespace flappyBird
 
 		if (IsKeyPressed(KEY_W))
 		{
+			PlaySound(player.jumpSound);
 			player.speedY = player.flappForce;
 		}
 		player.speedY += player.gravity * GetFrameTime();
@@ -38,6 +39,7 @@ namespace flappyBird
 
 		if (IsKeyPressed(KEY_SPACE))
 		{
+			PlaySound(player.jumpSound);
 			player.speedY = player.flappForce;
 		}
 		player.speedY += player.gravity * GetFrameTime();
@@ -67,15 +69,15 @@ namespace flappyBird
 	void loadPlayerAssets()
 	{
 		playerTexture = LoadTexture("res/player.png");
-		//jumpSound = LoadSound("res/shoot.wav");
-		//deadSound = LoadSound("res/death.wav");
+		jumpSound = LoadSound("res/jump.wav");
+		deadSound = LoadSound("res/death.wav");
 	}
 
 	void unloadPlayerAssets()
 	{
 		UnloadTexture(playerTexture);
-		//UnloadSound(jumpSound);
-		//UnloadSound(deadSound);
+		UnloadSound(jumpSound);
+		UnloadSound(deadSound);
 	}
 
 }

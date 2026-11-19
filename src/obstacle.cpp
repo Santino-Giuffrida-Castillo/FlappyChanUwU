@@ -72,6 +72,7 @@ namespace flappyBird
 		{
 			obstacle.passed = true;
 			player1.points++;
+			playPointSound();
 
 			if (player2.isActive)
 			{

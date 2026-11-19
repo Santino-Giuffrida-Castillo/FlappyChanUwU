@@ -14,23 +14,29 @@ namespace flappyBird
 		{
 			if (IsKeyPressed(KEY_ONE))
 			{
-				startGame(player, player2, obstacle, obstacle2, backGround);
+				playClickSound();
+				playInGameMusic();
+				startGame(player, player2, obstacle, obstacle2);
 				actualScreen = PLAY;
 			}
 			if (IsKeyPressed(KEY_TWO))
 			{
+				playClickSound();
 				actualScreen = CREDITS;
 			}
 			if (IsKeyPressed(KEY_THREE))
 			{
+				playClickSound();
 				actualScreen = OPTIONS;
 			}
 			if (IsKeyPressed(KEY_FOUR))
 			{
+				playClickSound();
 				actualScreen = TUTORIAL;
 			}
 			if (IsKeyPressed(KEY_FIVE))
 			{
+				playClickSound();
 				actualScreen = EXIT;
 			}
 
@@ -40,6 +46,7 @@ namespace flappyBird
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
+				playClickSound();
 				actualScreen = MENU;
 			}
 
@@ -49,6 +56,7 @@ namespace flappyBird
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
+				playClickSound();
 				actualScreen = MENU;
 			}
 
@@ -58,15 +66,16 @@ namespace flappyBird
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
-
+				playClickSound();
 				actualScreen = MENU;
 
 			}
 			if (IsKeyPressed(KEY_R))
 			{
-
+				playClickSound();
+				playInGameMusic();
 				actualScreen = PLAY;
-				startGame(player, player2, obstacle, obstacle2, backGround);
+				startGame(player, player2, obstacle, obstacle2);
 
 			}
 
@@ -76,11 +85,13 @@ namespace flappyBird
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
+				playClickSound();
 				actualScreen = MENU;
 			}
 
 			if ((IsKeyPressed(KEY_J)) && !player2.isActive)
 			{
+				playClickSound();
 				player2.isActive = true;
 			}
 			else if ((IsKeyPressed(KEY_J)) && player2.isActive)
@@ -93,7 +104,6 @@ namespace flappyBird
 		else if (actualScreen == PLAY)
 		{
 
-			obstacleMovement(obstacle, obstacle2, screenWidth, screenHeight);
 			addPoints(obstacle, player, player2);
 
 			if (player2.isActive)
@@ -111,6 +121,8 @@ namespace flappyBird
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
+				playClickSound();
+				playMenuMusic();
 				actualScreen = MENU;
 			}
 
