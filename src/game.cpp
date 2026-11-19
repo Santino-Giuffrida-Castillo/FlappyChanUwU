@@ -115,6 +115,8 @@ player2.rectangleSize
 		loadPlayerAssets();
 		assignPlayerAssets(player1);
 		assignPlayerAssets(player2);
+		int fontSize = 20;
+		int textWidth = MeasureText("V1.0", fontSize);
 
 		playMenuMusic();
 		while (!WindowShouldClose() && actualScreen != EXIT)
@@ -131,6 +133,7 @@ player2.rectangleSize
 			drawScreens(player1, player2, obstacle, obstacle2, actualScreen, backGround);
 
 
+			DrawText("V1.0", screenWidth - textWidth - 15, screenHeight - fontSize - 10, fontSize, Fade(WHITE, 0.6f));
 			
 
 			EndDrawing();

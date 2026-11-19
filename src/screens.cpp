@@ -134,7 +134,7 @@ namespace flappyBird
 
 		if (actualScreen == MENU)
 		{
-			DrawText("FlappuChanUwU", screenWidth / 8, static_cast <int>(screenHeight * 0.2), 50, WHITE);
+			DrawText("FlappyChanUwU", screenWidth / 8, static_cast <int>(screenHeight * 0.2), 50, WHITE);
 			DrawText("1. JUGAR", screenWidth / 8, static_cast <int>(screenHeight * 0.5), 40, GREEN);
 			DrawText("2. CREDITOS", screenWidth / 8, static_cast <int>(screenHeight * 0.6), 40, YELLOW);
 			DrawText("3. OPTIONS", screenWidth / 8, static_cast <int>(screenHeight * 0.7), 40, PINK);
